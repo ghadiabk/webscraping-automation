@@ -8,7 +8,7 @@ async function fetchCsvData() {
       throw new Error("Network response was not ok " + response.statusText);
     }
     const csvText = await response.text();
-    const rows = csvText.trim().split("\n").map(row => row.split(","));
+    const rows = Papa.parse(csvText, { header: false }).data;
     createTable(rows);
   } catch (error) {
     console.error("Error fetching CSV data:", error);
