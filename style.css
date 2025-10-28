@@ -19,8 +19,14 @@ table {
 th, td {
   padding: 10px;
   border: 1px solid #ccc;
+  text-align: left;
+  white-space: normal;
+  word-break: break-word;
 }
 
 th {
   background: #f9f9f9;
+  position: sticky; 
+  top: 0;
+  z-index: 1;
 }
